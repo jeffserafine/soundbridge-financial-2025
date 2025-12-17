@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+const SCHEDULE_URL = "https://calendar.app.google/u9H9poH9AAr9ZJ2Z6"
 
 export default function SiteHeader() {
   return (
@@ -27,7 +28,9 @@ export default function SiteHeader() {
             <Link href="/partners">Partner</Link>
           </Button>
           <Button asChild size="sm">
-            <Link href="/contact">Schedule</Link>
+            <a href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
+              Schedule
+            </a>
           </Button>
         </nav>
       </div>

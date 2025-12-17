@@ -1,36 +1,36 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-const SCHEDULE_URL = "https://calendar.app.google/u9H9poH9AAr9ZJ2Z6"
 
 export default function SiteHeader() {
   return (
-    <header className="border-b">
+    <header className="sticky top-0 z-50 border-b bg-background/70 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-semibold">
+        <Link href="/" className="font-semibold tracking-tight">
           SoundBridge Financial
         </Link>
 
-        <nav className="flex items-center gap-2">
-          <Link href="/partners" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">
+        <nav className="flex items-center gap-1">
+          <Link
+            href="/partners"
+            className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+          >
             For CPAs
           </Link>
-          <Link href="/clients" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            href="/clients"
+            className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+          >
             For Individuals
           </Link>
-          <Link href="/process" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">
+          <Link
+            href="/process"
+            className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+          >
             Process
           </Link>
-          <Link href="/contact" className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">
-            Contact
-          </Link>
 
-          <Button asChild variant="outline" size="sm">
-            <Link href="/partners">Partner</Link>
-          </Button>
-          <Button asChild size="sm">
-            <a href={SCHEDULE_URL} target="_blank" rel="noopener noreferrer">
-              Schedule
-            </a>
+          <Button asChild variant="outline" size="sm" className="ml-2">
+            <Link href="/contact">Contact</Link>
           </Button>
         </nav>
       </div>
